@@ -20,6 +20,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
@@ -27,6 +28,7 @@
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .navbar {
@@ -107,7 +109,7 @@
             gap: 20px;
         }
 
-        #home, #features, #trading-guide, #disclaimer, #contact, #terms, #signals, #student-results {
+        #home, #features, #trading-guide, #disclaimer, #contact, #terms, #signals, #student-results, #media {
             padding: 20px 5%;
         }
 
@@ -180,6 +182,7 @@
             margin-top: 20px;
             transition: background-color 0.3s ease;
             text-align: center;
+            font-family: 'Arial', sans-serif;
         }
 
         .whatsapp-btn {
@@ -226,6 +229,7 @@
             text-align: center;
             max-width: 400px;
             width: 80%;
+            font-family: 'Arial', sans-serif;
         }
 
         .close {
@@ -233,10 +237,47 @@
             float: right;
             font-size: 28px;
             cursor: pointer;
+            font-family: 'Arial', sans-serif;
         }
 
         .close:hover {
             color: var(--primary-color);
+        }
+
+        /* Media Page Styles */
+        #media .media-gallery {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            height: calc(100vh - 80px); /* Full height minus navbar */
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        #media .media-item {
+            flex: 0 0 100%;
+            height: 100%;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #media .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #media .media-caption {
+            position: absolute;
+            bottom: 20px;
+            background-color: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
         }
 
         @media (max-width: 768px) {
@@ -284,6 +325,7 @@
             background-color: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,0,0,0.2);
             color: var(--text-color);
+            font-family: 'Arial', sans-serif;
         }
 
         .contact-form button {
@@ -293,6 +335,7 @@
             padding: 12px 24px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-family: 'Arial', sans-serif;
         }
 
         .contact-form button:hover {
@@ -331,6 +374,7 @@
             <li><a href="#trading-guide">Trading Guide</a></li>
             <li><a href="#signals">Signals</a></li>
             <li><a href="#student-results">Student Results</a></li>
+            <li><a href="#media">Media</a></li>
             <li><a href="#disclaimer">Disclaimer</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#terms">Terms</a></li>
@@ -423,7 +467,6 @@
         </div>
     </div>
 
-    <!-- New Signals Section -->
     <div id="signals" class="page-container">
         <h2 style="text-align: center; color: var(--primary-color);">Forex Trading Signals</h2>
         <div class="feature-card" style="max-width: 800px; margin: 0 auto;">
@@ -434,10 +477,9 @@
         </div>
     </div>
 
-    <!-- Signals Modal -->
     <div id="signalsModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="document.getElementById('signalsModal').style.display='none'">&times;</span>
+            <span class="close" onclick="document.getElementById('signalsModal').style.display='none'">×</span>
             <h3 style="color: var(--primary-color);">Join Our Forex Signals</h3>
             <p>Access live trading signals for NASDAQ and forex markets via WhatsApp.</p>
             <a href="https://whatsapp.com/channel/0029VajArEY9MF8wwzzpY11w" class="whatsapp-btn" target="_blank">
@@ -446,7 +488,6 @@
         </div>
     </div>
 
-    <!-- New Student Results Section -->
     <div id="student-results" class="page-container">
         <h2 style="text-align: center; color: var(--primary-color);">Student Trading Results</h2>
         <div class="feature-card" style="max-width: 800px; margin: 0 auto;">
@@ -457,15 +498,39 @@
         </div>
     </div>
 
-    <!-- Student Results Modal -->
     <div id="resultsModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="document.getElementById('resultsModal').style.display='none'">&times;</span>
+            <span class="close" onclick="document.getElementById('resultsModal').style.display='none'">×</span>
             <h3 style="color: var(--primary-color);">Student Trading Success</h3>
             <p>Check out verified results from traders using our NASDAQ robot on Telegram.</p>
             <a href="https://t.me/NKULULEKO_FX" class="telegram-btn" target="_blank">
                 <i class="fab fa-telegram-plane"></i> See Results
             </a>
+        </div>
+    </div>
+
+    <div id="media" class="page-container">
+        <div class="media-gallery">
+            <div class="media-item">
+                <img src="/images/IMG-20250305-WA0008.jpg" alt="Nasdaq Robot Screenshot 1">
+                <div class="media-caption">March 5, 2025</div>
+            </div>
+            <div class="media-item">
+                <img src="/images/IMG-20250306-WA0007.jpg" alt="Nasdaq Robot Screenshot 2">
+                <div class="media-caption">March 6, 2025</div>
+            </div>
+            <div class="media-item">
+                <img src="/images/IMG-20250325-WA0020.jpg" alt="Nasdaq Robot Screenshot 3">
+                <div class="media-caption">March 25, 2025</div>
+            </div>
+            <div class="media-item">
+                <img src="/images/IMG-20250318-WA0004.jpg" alt="Nasdaq Robot Screenshot 4">
+                <div class="media-caption">March 18, 2025</div>
+            </div>
+            <div class="media-item">
+                <img src="/images/IMG-20250314-WA0020.jpg" alt="Nasdaq Robot Screenshot 5">
+                <div class="media-caption">March 14, 2025</div>
+            </div>
         </div>
     </div>
 
@@ -523,7 +588,6 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Close modals when clicking outside
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
@@ -532,3 +596,4 @@
     </script>
 </body>
     </html>
+    
