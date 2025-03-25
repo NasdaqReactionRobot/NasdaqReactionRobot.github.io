@@ -107,7 +107,7 @@
             gap: 20px;
         }
 
-        #home, #features, #trading-guide, #disclaimer, #contact, #terms {
+        #home, #features, #trading-guide, #disclaimer, #contact, #terms, #signals, #student-results {
             padding: 20px 5%;
         }
 
@@ -171,11 +171,9 @@
             border-color: var(--primary-color);
         }
 
-        .whatsapp-btn {
+        .whatsapp-btn, .telegram-btn {
             display: inline-flex;
             align-items: center;
-            background-color: #25D366;
-            color: white;
             padding: 12px 24px;
             text-decoration: none;
             border-radius: 5px;
@@ -184,12 +182,61 @@
             text-align: center;
         }
 
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+        }
+
         .whatsapp-btn:hover {
             background-color: #128C7E;
         }
 
-        .whatsapp-btn i {
+        .telegram-btn {
+            background-color: #0088cc;
+            color: white;
+        }
+
+        .telegram-btn:hover {
+            background-color: #006699;
+        }
+
+        .whatsapp-btn i, .telegram-btn i {
             margin-right: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--background-color);
+            padding: 20px;
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 80%;
+        }
+
+        .close {
+            color: var(--text-color);
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
@@ -282,6 +329,8 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#features">Forex Bot Features</a></li>
             <li><a href="#trading-guide">Trading Guide</a></li>
+            <li><a href="#signals">Signals</a></li>
+            <li><a href="#student-results">Student Results</a></li>
             <li><a href="#disclaimer">Disclaimer</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#terms">Terms</a></li>
@@ -374,6 +423,52 @@
         </div>
     </div>
 
+    <!-- New Signals Section -->
+    <div id="signals" class="page-container">
+        <h2 style="text-align: center; color: var(--primary-color);">Forex Trading Signals</h2>
+        <div class="feature-card" style="max-width: 800px; margin: 0 auto;">
+            <p>Join our WhatsApp Channel for real-time forex signals powered by the Nasdaq Reaction Robot V4. Get expert NASDAQ trading insights delivered daily.</p>
+            <button class="whatsapp-btn" onclick="document.getElementById('signalsModal').style.display='flex'">
+                <i class="fab fa-whatsapp"></i> Join Signals Channel
+            </button>
+        </div>
+    </div>
+
+    <!-- Signals Modal -->
+    <div id="signalsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('signalsModal').style.display='none'">&times;</span>
+            <h3 style="color: var(--primary-color);">Join Our Forex Signals</h3>
+            <p>Access live trading signals for NASDAQ and forex markets via WhatsApp.</p>
+            <a href="https://whatsapp.com/channel/0029VajArEY9MF8wwzzpY11w" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Join Now
+            </a>
+        </div>
+    </div>
+
+    <!-- New Student Results Section -->
+    <div id="student-results" class="page-container">
+        <h2 style="text-align: center; color: var(--primary-color);">Student Trading Results</h2>
+        <div class="feature-card" style="max-width: 800px; margin: 0 auto;">
+            <p>See real results from students using the Nasdaq Reaction Robot V4. Join our Telegram community for proof of this forex bot’s success.</p>
+            <button class="telegram-btn" onclick="document.getElementById('resultsModal').style.display='flex'">
+                <i class="fab fa-telegram-plane"></i> View Student Results
+            </button>
+        </div>
+    </div>
+
+    <!-- Student Results Modal -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('resultsModal').style.display='none'">&times;</span>
+            <h3 style="color: var(--primary-color);">Student Trading Success</h3>
+            <p>Check out verified results from traders using our NASDAQ robot on Telegram.</p>
+            <a href="https://t.me/NKULULEKO_FX" class="telegram-btn" target="_blank">
+                <i class="fab fa-telegram-plane"></i> See Results
+            </a>
+        </div>
+    </div>
+
     <div id="disclaimer" class="page-container">
         <h2 style="text-align: center; color: var(--primary-color);">Risk Disclaimer</h2>
         <div class="feature-card" style="max-width: 800px; margin: 0 auto;">
@@ -427,6 +522,13 @@
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
     </script>
 </body>
     </html>
