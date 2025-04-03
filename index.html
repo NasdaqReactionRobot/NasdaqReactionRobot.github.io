@@ -207,24 +207,15 @@
         .gumroad-button {
             background-color: var(--primary-color);
             color: var(--text-color);
-            margin: 0 5px;
+            margin: 20px auto 10px;
+            display: block;
         }
 
         .gumroad-button:hover {
             background-color: #cc0000;
         }
 
-        .paypal-button {
-            background-color: #0070ba;
-            color: white;
-            margin: 0 5px;
-        }
-
-        .paypal-button:hover {
-            background-color: #005ea6;
-        }
-
-        .whatsapp-btn i, .telegram-btn i, .paypal-button i {
+        .whatsapp-btn i, .telegram-btn i {
             margin-right: 10px;
         }
 
@@ -290,8 +281,8 @@
                 font-size: 32px;
             }
 
-            .whatsapp-btn, .telegram-btn, .gumroad-button, .paypal-button {
-                margin: 10px 0;
+            .gumroad-button, .telegram-btn {
+                margin: 10px auto;
             }
         }
 
@@ -395,7 +386,7 @@
     <div id="home" class="page-container">
         <section class="hero">
             <img src="/images/images/Header.jpg" alt="Nasdaq Reaction Robot V4 Header" class="hero-image">
-            <h1>Nasdaq Reaction <span style="color: var(--primary-color);">Robot V4</span> - Forex Trading        Trading Robot</h1>
+            <h1>Nasdaq Reaction <span style="color: var(--primary-color);">Robot V4</span> - Forex Trading Robot</h1>
             <p class="hero-description">
                 Discover the Nasdaq Reaction Robot V4 by Nkululeko FX, an advanced forex bot designed for multi-market trading, including NASDAQ, forex pairs, and more. This trading robot maximizes your potential with real-time market analysis and automated execution across various markets.
             </p>
@@ -424,7 +415,8 @@
                         <p>Android & iOS Supported Forex Bot</p>
                         <a href="https://nkululekofx.gumroad.com/l/jgzrke" class="gumroad-button">Buy via Gumroad</a>
                         <a href="https://paypal.me/nasdaqreactionrobot?locale.x=en_US&amount=800" 
-                           class="paypal-button" 
+                           class="telegram-btn" 
+                           style="background-color: #0070ba;" 
                            target="_blank">
                             <i class="fab fa-paypal"></i> Buy via PayPal
                         </a>
@@ -435,8 +427,9 @@
                         <p>Windows & MacOS Supported Trading Robot</p>
                         <a href="https://nkululekofx.gumroad.com/l/kfnke" class="gumroad-button">Buy via Gumroad</a>
                         <a href="https://paypal.me/nasdaqreactionrobot?locale.x=en_US&amount=1500" 
-                           class="paypal-button" 
-24px;                           target="_blank">
+                           class="telegram-btn" 
+                           style="background-color: #0070ba;" 
+                           target="_blank">
                             <i class="fab fa-paypal"></i> Buy via PayPal
                         </a>
                     </div>
