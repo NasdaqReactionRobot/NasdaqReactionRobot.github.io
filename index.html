@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,7 +174,7 @@
             border-color: var(--primary-color);
         }
 
-        .whatsapp-btn, .telegram-btn {
+        .whatsapp-btn, .telegram-btn, .gumroad-button {
             display: inline-flex;
             align-items: center;
             padding: 12px 24px;
@@ -201,6 +202,16 @@
 
         .telegram-btn:hover {
             background-color: #006699;
+        }
+
+        .gumroad-button {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            margin: 0 5px;
+        }
+
+        .gumroad-button:hover {
+            background-color: #cc0000;
         }
 
         .whatsapp-btn i, .telegram-btn i {
@@ -397,33 +408,13 @@
                         <h3 style="color: var(--primary-color);">Mobile Version</h3>
                         <div style="font-size: 36px; margin: 20px 0;">R800</div>
                         <p>Android & iOS Supported Forex Bot</p>
-                        <a href="https://wa.me/27648780398?text=I'm%20interested%20in%20Mobile%20Version" 
-                           class="whatsapp-btn" 
-                           target="_blank">
-                            <i class="fab fa-whatsapp"></i> Buy via WhatsApp
-                        </a>
-                        <a href="https://paypal.me/nasdaqreactionrobot?locale.x=en_US&amount=800" 
-                           class="telegram-btn" 
-                           style="background-color: #0070ba; margin-left: 10px;" 
-                           target="_blank">
-                            <i class="fab fa-paypal"></i> Buy via PayPal
-                        </a>
+                        <a href="https://nkululekofx.gumroad.com/l/jgzrke" class="gumroad-button">Buy Mobile Bot</a>
                     </div>
                     <div class="pricing-card">
                         <h3 style="color: var(--primary-color);">PC Version</h3>
                         <div style="font-size: 36px; margin: 20px 0;">R1,500</div>
                         <p>Windows & MacOS Supported Trading Robot</p>
-                        <a href="https://wa.me/27648780398?text=I'm%20interested%20in%20PC%20Version" 
-                           class="whatsapp-btn" 
-                           target="_blank">
-                            <i class="fab fa-whatsapp"></i> Buy via WhatsApp
-                        </a>
-                        <a href="https://paypal.me/nasdaqreactionrobot?locale.x=en_US&amount=1500" 
-                           class="telegram-btn" 
-                           style="background-color: #0070ba; margin-left: 10px;" 
-                           target="_blank">
-                            <i class="fab fa-paypal"></i> Buy via PayPal
-                        </a>
+                        <a href="https://nkululekofx.gumroad.com/l/kfnke" class="gumroad-button">Buy PC Bot</a>
                     </div>
                 </div>
                 <div class="pricing-images">
@@ -565,6 +556,7 @@
         <p>Contact: +27 64 878 0398 | Nkululekonkambule13@gmail.com</p>
     </footer>
 
+    <script src="https://gumroad.com/js/gumroad.js"></script>
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
@@ -579,3 +571,4 @@
     </script>
 </body>
 </html>
+ 
