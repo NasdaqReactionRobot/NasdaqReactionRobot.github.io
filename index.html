@@ -24,7 +24,6 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -182,7 +181,6 @@
             margin-top: 20px;
             transition: background-color 0.3s ease;
             text-align: center;
-            font-family: 'Arial', sans-serif;
         }
 
         .whatsapp-btn {
@@ -218,7 +216,6 @@
             margin-right: 10px;
         }
 
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -240,7 +237,6 @@
             text-align: center;
             max-width: 400px;
             width: 80%;
-            font-family: 'Arial', sans-serif;
         }
 
         .close {
@@ -248,11 +244,183 @@
             float: right;
             font-size: 28px;
             cursor: pointer;
-            font-family: 'Arial', sans-serif;
         }
 
         .close:hover {
             color: var(--primary-color);
+        }
+
+        /* Chatbot Styling */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1002;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-toggle {
+            background: linear-gradient(135deg, var(--primary-color), #cc0000);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-window {
+            display: none;
+            width: 320px;
+            height: 450px;
+            background: var(--background-color);
+            border-radius: 12px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .chatbot-header {
+            background: var(--primary-color);
+            color: var(--text-color);
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .chatbot-messages {
+            height: 350px;
+            overflow-y: auto;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-color);
+        }
+
+        .message {
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .user-message {
+            background: var(--primary-color);
+            margin-left: 20%;
+            text-align: right;
+        }
+
+        .bot-message {
+            background: rgba(255,255,255,0.1);
+            margin-right: 20%;
+        }
+
+        .typing-message {
+            background: rgba(255,255,255,0.1);
+            margin-right: 20%;
+            display: flex;
+            align-items: center;
+        }
+
+        .typing-message::before {
+            content: '• • •';
+            animation: typing 1s infinite;
+        }
+
+        @keyframes typing {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .disclaimer {
+            font-style: italic;
+            color: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        .action-button {
+            display: inline-block;
+            padding: 8px 12px;
+            background: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 8px 5px 0 0;
+            font-size: 13px;
+        }
+
+        .action-button:hover {
+            background: #cc0000;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            background: var(--background-color);
+            border-top: 1px solid rgba(255,0,0,0.2);
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-color);
+            font-size: 14px;
+        }
+
+        .chatbot-input button {
+            padding: 10px 15px;
+            border: none;
+            background: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 5px;
+            margin-left: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .chatbot-input button:hover {
+            background: #cc0000;
+        }
+
+        .chatbot-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chatbot-messages::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 6px;
+        }
+
+        .clear-history {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .clear-history a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .clear-history a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -283,6 +451,15 @@
             .gumroad-button, .telegram-btn {
                 margin: 10px auto;
             }
+
+            .chatbot-window {
+                width: 90vw;
+                height: 80vh;
+            }
+
+            .chatbot-messages {
+                height: calc(80vh - 100px);
+            }
         }
 
         footer {
@@ -304,7 +481,6 @@
             background-color: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,0,0,0.2);
             color: var(--text-color);
-            font-family: 'Arial', sans-serif;
         }
 
         .contact-form button {
@@ -314,7 +490,6 @@
             padding: 12px 24px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-family: 'Arial', sans-serif;
         }
 
         .contact-form button:hover {
@@ -467,8 +642,7 @@
             </div>
             <div class="feature-card">
                 <h3 style="color: var(--primary-color);">Configuration</h3>
-                <p>Adjust settings like lot size, risk 
-
+                <p>Adjust settings like lot size, risk levels, and trading preferences to suit your strategy.</p>
             </div>
             <div class="feature-card">
                 <h3 style="color: var(--primary-color);">Best Practices</h3>
@@ -567,6 +741,28 @@
         </form>
     </div>
 
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                Nasdaq Reaction Robot V4 Support
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Welcome to Nkululeko FX! Ask about the Nasdaq Reaction Robot V4—pricing, setup, signals, or more!
+                </div>
+            </div>
+            <div class="clear-history">
+                <a href="#" onclick="clearChatHistory()">Clear Chat History</a>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Type your question..." onkeypress="if(event.key === 'Enter') sendMessage()">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>© 2025 Nasdaq Reaction Robot V4 | Forex Bot by Nkululeko FX</p>
         <p>Contact: +27 64 878 0398 | Nkululekonkambule13@gmail.com</p>
@@ -574,16 +770,229 @@
 
     <script src="https://gumroad.com/js/gumroad.js"></script>
     <script>
+        // Navbar Menu Toggle
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
+        // Modal Close on Click Outside
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
             }
         };
+
+        // Chatbot Functions
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML.replace(/</g, '<').replace(/>/g, '>');
+        }
+
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            chatbotWindow.style.display = chatbotWindow.style.display === 'block' ? 'none' : 'block';
+            if (chatbotWindow.style.display === 'block') {
+                loadChatHistory();
+                document.getElementById('userInput').focus();
+            }
+        }
+
+        const qaDatabase = [
+            {
+                intent: 'about',
+                keywords: ['what', 'is', 'nasdaq', 'reaction', 'robot', 'bot'],
+                response: 'The Nasdaq Reaction Robot V4 is an automated forex trading bot for NASDAQ, forex pairs, and commodities. It offers real-time market analysis, automated trading, and risk management.',
+                buttons: [
+                    { text: 'View Features', url: '#features' }
+                ]
+            },
+            {
+                intent: 'pricing',
+                keywords: ['cost', 'price', 'how much', 'buy'],
+                response: 'The bot has two versions:<br>- Mobile: R800 (Android & iOS).<br>- PC: R1,500 (Windows & MacOS).',
+                buttons: [
+                    { text: 'Buy Mobile (Gumroad)', url: 'https://nkululekofx.gumroad.com/l/jgzrke' },
+                    { text: 'Buy Mobile (PayPal)', url: 'https://paypal.me/nasdaqreactionrobot?locale.x=en_US&amount=800' },
+                    { text: 'Buy PC (Gumroad)', url: 'https://nkululekofx.gumroad.com/l/kfnke' },
+                    { text: 'Buy PC (PayPal)', url: 'https://paypal.me/nasdaqreactionrobot?locale.x=en_US&amount=1500' }
+                ]
+            },
+            {
+                intent: 'installation',
+                keywords: ['install', 'setup', 'how to', 'configure'],
+                response: 'Download from the official link after purchase. Install on Android/iOS for mobile or Windows/MacOS for PC. Connect to your broker and adjust settings like lot size.',
+                buttons: [
+                    { text: 'Trading Guide', url: '#trading-guide' }
+                ]
+            },
+            {
+                intent: 'markets',
+                keywords: ['markets', 'trade', 'what markets', 'pairs'],
+                response: 'The bot trades NASDAQ, forex pairs (e.g., EUR/USD, GBP/JPY), and commodities with real-time trend detection.'
+            },
+            {
+                intent: 'profit',
+                keywords: ['profit', 'make money', 'rich', 'earn'],
+                response: 'The bot automates trading and analyzes markets, but profits aren’t guaranteed. Try a demo account and join our signals for insights.',
+                disclaimer: 'Trading involves significant risks. Trade responsibly and only with funds you can afford to lose.'
+            },
+            {
+                intent: 'signals',
+                keywords: ['signals', 'whatsapp', 'alerts'],
+                response: 'Join our WhatsApp channel for real-time trading signals on NASDAQ and forex.',
+                buttons: [
+                    { text: 'Join Signals', url: 'https://whatsapp.com/channel/0029VajArEY9MF8wwzzpY11w' }
+                ]
+            },
+            {
+                intent: 'refund',
+                keywords: ['refund', 'return', 'policy'],
+                response: 'Refunds are considered within 7 days if the software is unused. Contact us for details.',
+                buttons: [
+                    { text: 'Contact Support', url: 'mailto:Nkululekonkambule13@gmail.com' }
+                ]
+            },
+            {
+                intent: 'results',
+                keywords: ['results', 'student', 'proof', 'performance'],
+                response: 'Check student trading results in our Telegram community.',
+                buttons: [
+                    { text: 'View Results', url: 'https://t.me/NKULULEKO_FX' }
+                ]
+            },
+            {
+                intent: 'contact',
+                keywords: ['contact', 'support', 'help', 'phone'],
+                response: 'Reach us at +27 64 878 0398 or Nkululekonkambule13@gmail.com.',
+                buttons: [
+                    { text: 'Email Support', url: 'mailto:Nkululekonkambule13@gmail.com' },
+                    { text: 'WhatsApp', url: 'https://wa.me/27648780398?text=I'm%20interested%20in%20Nasdaq%20Reaction%20Robot%20V4' },
+                    { text: 'Contact Form', url: '#contact' }
+                ]
+            },
+            {
+                intent: 'demo',
+                keywords: ['demo', 'test', 'try'],
+                response: 'Test the bot on a demo account to evaluate performance across markets.',
+                buttons: [
+                    { text: 'Trading Guide', url: '#trading-guide' }
+                ]
+            },
+            {
+                intent: 'stats',
+                keywords: ['stats', 'analytics'],
+                response: () => {
+                    const analytics = JSON.parse(localStorage.getItem('chatAnalytics') || '{}');
+                    let output = 'Query Analytics:<br>';
+                    for (const [intent, count] of Object.entries(analytics)) {
+                        output += `${intent}: ${count} queries<br>`;
+                    }
+                    return output || 'No analytics yet.';
+                }
+            }
+        ];
+
+        function loadChatHistory() {
+            const messagesDiv = document.getElementById('chatbotMessages');
+            const history = JSON.parse(localStorage.getItem('chatHistory') || '[]');
+            messagesDiv.innerHTML = '';
+            history.forEach(msg => {
+                const div = document.createElement('div');
+                div.className = `message ${msg.type}-message`;
+                div.innerHTML = msg.text;
+                messagesDiv.appendChild(div);
+            });
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function saveChatHistory(type, text) {
+            const history = JSON.parse(localStorage.getItem('chatHistory') || '[]');
+            history.push({ type, text });
+            if (history.length > 50) history.shift();
+            localStorage.setItem('chatHistory', JSON.stringify(history));
+        }
+
+        function clearChatHistory() {
+            localStorage.removeItem('chatHistory');
+            const messagesDiv = document.getElementById('chatbotMessages');
+            messagesDiv.innerHTML = '<div class="message bot-message">Chat history cleared! Ask away!</div>';
+            return false;
+        }
+
+        function trackAnalytics(intent) {
+            const analytics = JSON.parse(localStorage.getItem('chatAnalytics') || '{}');
+            analytics[intent] = (analytics[intent] || 0) + 1;
+            localStorage.setItem('chatAnalytics', JSON.stringify(analytics));
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (!userInput || userInput.length > 200) {
+                alert('Please enter a valid question (max 200 characters).');
+                return;
+            }
+
+            const messagesDiv = document.getElementById('chatbotMessages');
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.innerHTML = sanitizeInput(userInput);
+            messagesDiv.appendChild(userMessage);
+            saveChatHistory('user', userMessage.innerHTML);
+
+            const typingMessage = document.createElement('div');
+            typingMessage.className = 'message typing-message';
+            typingMessage.innerHTML = 'Typing...';
+            messagesDiv.appendChild(typingMessage);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            setTimeout(() => {
+                messagesDiv.removeChild(typingMessage);
+                const inputWords = userInput.toLowerCase().split(/\s+/);
+                let bestMatch = null;
+                let highestScore = 0;
+
+                for (const qa of qaDatabase) {
+                    const score = qa.keywords.reduce((acc, keyword) => 
+                        acc + (inputWords.includes(keyword) ? 1 : 0), 0);
+                    if (score > highestScore) {
+                        highestScore = score;
+                        bestMatch = qa;
+                    }
+                }
+
+                let response = 'I’m not sure about that. Try asking about pricing, setup, or signals, or contact us at <a href="mailto:Nkululekonkambule13@gmail.com">Nkululekonkambule13@gmail.com</a>.';
+                let buttons = [];
+                let disclaimer = '';
+
+                if (bestMatch && highestScore > 0) {
+                    response = typeof bestMatch.response === 'function' ? bestMatch.response() : bestMatch.response;
+                    buttons = bestMatch.buttons || [];
+                    disclaimer = bestMatch.disclaimer || '';
+                    trackAnalytics(bestMatch.intent);
+                }
+
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot-message';
+                let botHtml = response;
+                if (buttons.length) {
+                    botHtml += '<br>' + buttons.map(btn => 
+                        `<a href="${btn.url}" class="action-button" target="_blank">${btn.text}</a>`
+                    ).join(' ');
+                }
+                if (disclaimer) {
+                    botHtml += `<div class="disclaimer">${disclaimer}</div>`;
+                }
+                botMessage.innerHTML = botHtml;
+                messagesDiv.appendChild(botMessage);
+                saveChatHistory('bot', botHtml);
+
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 1000);
+
+            document.getElementById('userInput').value = '';
+        }
     </script>
 </body>
-</html>
+    </html>
